@@ -3,9 +3,12 @@ package org.management.controllers;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
+import org.management.Application;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -13,8 +16,6 @@ import java.io.FileReader;
 public class SingInController {
     @FXML
     private Label singInText;
-    @FXML
-    private VBox vBox;
     @FXML
     private TextField userName;
     @FXML
@@ -46,8 +47,11 @@ public class SingInController {
     }
     @FXML
     protected void onHomeButtonClick() throws Exception {
-        Parent newContent = FXMLLoader.load(getClass().getResource("/org/management/homeView.fxml"));
-        vBox.getChildren().setAll(newContent);
+        FXMLLoader fxmlLoader = new FXMLLoader(Application.class.getResource("/org/management/homeView.fxml"));
+        Scene scene = new Scene(fxmlLoader.load());
+        Stage stage = (Stage) singInText.getScene().getWindow();
+        stage.setScene(scene);
+        stage.setFullScreen(true);
     }
 
 }

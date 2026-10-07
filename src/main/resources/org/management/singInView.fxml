@@ -14,9 +14,9 @@
 
     <Label fx:id="singInText" text="Kérem lépjen be:"/>
     <Label text="Felhasználónév:"/>
-    <TextField fx:id="userName"/>
+    <TextField fx:id="userName" maxWidth="200"/>
     <Label text="Jelszó:"/>
-    <TextField fx:id="password"/>
+    <TextField fx:id="password" maxWidth="200"/>
     <Button text="Belépés" onAction="#onSingInButtonClick"/>
     <Button text="Vissza" onAction="#onHomeButtonClick"/>
 
